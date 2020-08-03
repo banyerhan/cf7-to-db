@@ -17,6 +17,7 @@ function wpcf7_send_to_external ( $cf7 ) {
 		$type = $cf7->posted_data["your-select"];
 
 		//if form type is equal to above value (optional)
+		//optional means if you required condition   
 		if ( $type == 'Form Name' ){
 
 			//code added for wordpress 4.9 !important ***
@@ -40,8 +41,9 @@ function wpcf7_send_to_external ( $cf7 ) {
 			$mydb->insert( 
 				//name of external db table
 				'table_name',
+				
 				//name of table columns and which fields to insert 
-				//these are example fields
+				
 				array( 
 					'name' => $field1, 
 					'email' => $field2,
