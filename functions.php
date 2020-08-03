@@ -19,7 +19,7 @@ function wpcf7_send_to_external ( $cf7 ) {
 		//if form type is equal to above value (optional)
 		if ( $type == 'Form Name' ){
 
-			//code added for wordpress 4.9 2018
+			//code added for wordpress 4.9 !important ***
 			$cf7 = WPCF7_ContactForm::get_current();
     			$submission = WPCF7_Submission::get_instance();
 			$data = $submission->get_posted_data();
