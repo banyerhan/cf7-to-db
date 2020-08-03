@@ -1,5 +1,5 @@
 <?php
-function wpcf7_send_to_external ( $cf7 ) {
+function cf7_inst_db ( $cf7 ) {
 
 	//external db details
 	$username = 'username';
@@ -27,7 +27,6 @@ function wpcf7_send_to_external ( $cf7 ) {
 			
 			
 			//get posted form fields
-			//these are example form fields
 			$field1 = $data["name"];
 			$field2 = $data["email"];
 			$field3 = $data["address"];
@@ -40,18 +39,18 @@ function wpcf7_send_to_external ( $cf7 ) {
 			//insert into external db
 			$mydb->insert( 
 				//name of external db table
-				'table_name',
+				'my_table_name',
 				
 				//name of table columns and which fields to insert 
 				
 				array( 
-					'name' => $field1, 
+					'full_name' => $field1, 
 					'email' => $field2,
 					'address' => $field3,
 					'city' => $field4,
 					'state' => $field5,
 					'zip' => $field6,
-					'phone' => $field7	
+					'mobile' => $field7	
 
 				),
 				//field formats: %s = string, %d = integer, %f = float
@@ -65,5 +64,5 @@ function wpcf7_send_to_external ( $cf7 ) {
 	}
 
 }
-add_action("wpcf7_before_send_mail", "wpcf7_send_to_external");
+add_action("wpcf7_before_send_mail", "cf7_inst_db");
 ?>
